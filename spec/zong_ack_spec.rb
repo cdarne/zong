@@ -13,9 +13,9 @@ describe Zong::Zongosaurus, "ack" do
       :channel_id => 17,
       :status_id => 0,
       :creation_date => Time.now,
-	    :rcpt_to => "33629658846",
-	    :body => "test",
-	    :sign => "LDMobile",
+      :rcpt_to => "33629658846",
+      :body => "test",
+      :sign => "LDMobile",
       :schedule => Time.now
     )
   end
@@ -67,7 +67,7 @@ describe Zong::Zongosaurus, "ack" do
       @outgoing.reload
       @outgoing.status_id.should eql(7)
       @mt_log.last_line.should include("|#{@outgoing.id}|")
-      @mt_log.last_line.should include("|7-non delivered")
+        @mt_log.last_line.should include("|7-non delivered")
     end
 
     it "updates the outgoing status to 'acked' if ACTION=SMSMT and if ERROR is not defined and if REF is defined" do
@@ -75,7 +75,7 @@ describe Zong::Zongosaurus, "ack" do
       @outgoing.reload
       @outgoing.status_id.should eql(2)
       @mt_log.last_line.should include("|#{@outgoing.id}|")
-      @mt_log.last_line.should include("|2-acked")
+        @mt_log.last_line.should include("|2-acked")
     end
   end
 
@@ -90,7 +90,7 @@ describe Zong::Zongosaurus, "ack" do
       @outgoing.reload
       @outgoing.status_id.should eql(5)
       @mt_log.last_line.should include("|#{@outgoing.id}|")
-      @mt_log.last_line.should include("|5-delivered")
+        @mt_log.last_line.should include("|5-delivered")
     end
 
     it "logs an error ('Delivery report failed') if STATUS=failed" do
@@ -104,7 +104,7 @@ describe Zong::Zongosaurus, "ack" do
       @outgoing.reload
       @outgoing.status_id.should eql(7)
       @mt_log.last_line.should include("|#{@outgoing.id}|")
-      @mt_log.last_line.should include("|7-non delivered")
+        @mt_log.last_line.should include("|7-non delivered")
     end
 
     [
@@ -119,7 +119,7 @@ describe Zong::Zongosaurus, "ack" do
         @outgoing.reload
         @outgoing.status_id.should eql(code)
         @mt_log.last_line.should include("|#{@outgoing.id}|")
-        @mt_log.last_line.should include("|#{code}-#{label}")
+          @mt_log.last_line.should include("|#{code}-#{label}")
       end
     end
 
@@ -128,7 +128,7 @@ describe Zong::Zongosaurus, "ack" do
       @outgoing.reload
       @outgoing.status_id.should eql(1016)
       @mt_log.last_line.should include("|#{@outgoing.id}|")
-      @mt_log.last_line.should include("|1016-buffered")
+        @mt_log.last_line.should include("|1016-buffered")
     end
 
     it "logs an error ('Delivery report unknown') if STATUS=unknown and REF is undefined" do
@@ -142,7 +142,7 @@ describe Zong::Zongosaurus, "ack" do
       @outgoing.reload
       @outgoing.status_id.should eql(6)
       @mt_log.last_line.should include("|#{@outgoing.id}|")
-      @mt_log.last_line.should include("|6-lost notification")
+        @mt_log.last_line.should include("|6-lost notification")
     end
   end
 
