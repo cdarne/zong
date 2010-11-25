@@ -7,7 +7,7 @@ module Zong
   class Zongosaurus
     include HTTParty
     base_uri 'http://localhost/sendit.ldmobile.net'
-    debug_output $stderr
+    #debug_output $stderr
 
     def ack (params= {})
       self.class.get('/MO/zong_ack.php', :query => params)

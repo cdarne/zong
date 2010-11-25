@@ -4,7 +4,7 @@ describe Zong::Zongosaurus, "ack" do
 
   before :each do
     @mt_log = Zong::BaseLog.new '/home/cdarne/var/www/sendit.ldmobile.net/MO/logs/mt.log'
-    @error_log = Zong::BaseLog.new '/home/cdarne/var/www/sendit.ldmobile.net/MO/logs/error.log'
+    @error_log = Zong::BaseLog.new '/home/cdarne/var/www/sendit.ldmobile.net/MO/logs/mt_error.log'
     @server_log = Zong::BaseLog.new '/home/cdarne/var/log/cherokee/cherokee.error'
 
     Zong::Outgoing.destroy
