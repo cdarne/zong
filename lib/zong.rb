@@ -15,7 +15,6 @@ module Zong
   end
 
   class BaseLog
-
     attr_reader :file_path, :file_size
 
     def initialize (file_path)
