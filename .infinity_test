@@ -2,6 +2,6 @@ infinity_test do
   use :test_framework => :rspec
 
   notifications :lib_notify do
-    show_images :mode => :fuuu
+    show_images :mode => :simpson
   end
 end
