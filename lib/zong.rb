@@ -41,7 +41,12 @@ module Zong
     end
 
     def changed?
-      File.size(@file_path) != @file_size
+      if File.size(@file_path) != @file_size
+        @file_size = File.size(@file_path)
+        true
+      else
+        false
+      end
     end
   end
 end
